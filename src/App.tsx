@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { ChevronDown, ChevronRight, Code, BookOpen, Zap, Layers, Settings, Eye, List, RefreshCw, Shield, Share2 } from 'lucide-react';
 
 export default function ReactBasicsGuide() {
-  const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [activeSection, setActiveSection] = useState(null);
   const [completedSections, setCompletedSections] = useState(new Set());
   const [darkMode, setDarkMode] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -358,20 +358,22 @@ function ThemedButton() {
                         </div>
                         
                         {section.code && (
-                          <div className="relative group">
+                          <div className="relative group w-full">
                             <div className="absolute -inset-1 bg-gradient-to-r from-pink-500 to-blue-500 rounded-xl blur opacity-20 group-hover:opacity-40 transition-opacity duration-500" />
-                            <div className={`relative ${darkMode ? 'bg-gray-900' : 'bg-gray-900'} text-gray-100 p-6 rounded-xl overflow-x-auto border border-gray-700`}>
-                              <div className="flex items-center justify-between mb-4">
+                            <div className={`relative ${darkMode ? 'bg-gray-900' : 'bg-gray-900'} text-gray-100 rounded-xl border border-gray-700 w-full min-w-0`}>
+                              <div className="flex items-center justify-between p-4 pb-0">
                                 <div className="flex space-x-2">
                                   <div className="w-3 h-3 bg-red-500 rounded-full"></div>
                                   <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                                   <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                                 </div>
-                                <span className="text-xs text-gray-400">React JSX</span>
+                                <span className="text-xs text-gray-400 hidden sm:block">React JSX</span>
                               </div>
-                              <pre className="text-sm leading-relaxed">
-                                <code className="language-jsx">{section.code}</code>
-                              </pre>
+                              <div className="overflow-x-auto p-4 pt-2">
+                                <pre className="text-xs sm:text-sm leading-relaxed whitespace-pre min-w-max">
+                                  <code className="language-jsx">{section.code}</code>
+                                </pre>
+                              </div>
                             </div>
                           </div>
                         )}
