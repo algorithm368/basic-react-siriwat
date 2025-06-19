@@ -370,10 +370,10 @@ function ThemedButton() {
                                 <span className="text-xs text-gray-400 hidden sm:block">React JSX</span>
                               </div>
                               <div className="overflow-x-auto p-4 pt-2">
-                                <pre className="text-xs sm:text-sm leading-relaxed whitespace-pre min-w-max">
-                                  <code className="language-jsx">{section.code}</code>
-                                </pre>
-                              </div>
+                    <pre className="text-xs sm:text-sm leading-relaxed whitespace-pre-wrap break-words max-w-full">
+                    <code className="language-jsx">{section.code}</code>
+                    </pre>
+                          </div>
                             </div>
                           </div>
                         )}
