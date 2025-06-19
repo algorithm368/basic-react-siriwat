@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 
 export default function ReactBasicsGuide() {
-  const [activeSection, setActiveSection] = useState(null);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
   const [completedSections, setCompletedSections] = useState(new Set());
   const [darkMode, setDarkMode] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -507,15 +507,7 @@ function ThemedButton() {
             <p
               className={`${darkMode ? "text-gray-300" : "text-gray-600"} text-lg`}
             >
-              🚀 ถ้าต้องการเพิ่มเติม:
-              <span className="font-bold text-blue-600">
-                {" "}
-                Routing, Form, API, Custom Hook{" "}
-              </span>
-              หรือ <span className="font-bold text-purple-600">
-                Mindmap
-              </span>{" "}
-              สามารถแจ้งมาได้เลย!
+              จัดทำมาเพื่อการเรียนรู้ React เบื้องต้น
             </p>
             <div className="flex justify-center space-x-4 mt-4">
               {["📝", "🎨", "⚡", "🔧"].map((emoji, i) => (
